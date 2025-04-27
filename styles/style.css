@@ -1,13 +1,16 @@
 body {
-    width: 1440px;
+    max-width: 1440px;
+    width: 100%;
     height: 100vh;
     background: linear-gradient(180deg, rgba(1, 8, 14, 1) 1%, rgba(4, 24, 50, 1) 39%, rgba(1, 8, 14, 1) 88%);
     margin: 5% auto;
     color: #fff;
+    padding: 0 1rem;
 }
 
 header {
-    width: 1200px;
+    max-width: 1200px;
+    width: 100%;
     margin: 2rem auto;
 }
 
@@ -17,18 +20,21 @@ header .logo {
 }
 
 main.container {
-    width: 1200px;
-    height: auto;
+    max-width: 1200px;
+    width: 100%;
     border: 2px solid #00F4BF;
     margin: 0 auto;
-    padding: 4.5rem 6.38rem;
-    background-image: url('../assets/PNG/Imagem\ com\ borda.png');
+    padding: 4.5rem 2rem;
+    background-image: url('../assets/PNG/Imagem com borda.png');
     background-size: cover;
+    background-position: center;
     position: relative;
 }
 
 main.container .grafismo {
-    background: url('../assets/SVG/Grafismo\ verde.svg');
+    background: url('../assets/SVG/Grafismo verde.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
     width: 31.9375rem;
     height: 2.0625rem;
     position: absolute;
@@ -40,6 +46,7 @@ main.container h1 {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 5rem;
     line-height: 110%;
+    text-align: center;
 }
 
 main.container h1 span {
@@ -48,9 +55,11 @@ main.container h1 span {
 
 form {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-end;
     gap: 2rem;
     margin: 2.5rem 0;
+    justify-content: center;
 }
 
 form .input-group {
@@ -58,10 +67,11 @@ form .input-group {
     flex-direction: column;
     align-items: flex-start;
     gap: .5rem;
-
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
+    width: 100%;
+    max-width: 350px;
 }
 
 form .input-group select,
@@ -73,18 +83,14 @@ form .input-group input {
     height: 3.5rem;
     padding: .5rem 1rem;
     font-size: 1.3rem;
+    width: 100%;
 }
 
 form .input-group select {
-    width: 24.75rem;
     appearance: none;
-    background: url('../assets/PNG/Arrow\ down.png') no-repeat right 1rem top 50%;
-    color: black;
+    background: url('../assets/PNG/Arrow down.png') no-repeat right 1rem top 50%;
     background-color: white;
-}
-
-form .input-group input {
-    width: 60px;
+    color: black;
 }
 
 form .input-group input::placeholder {
@@ -98,7 +104,8 @@ form button {
     background-color: #1875E8;
     padding: 1rem 1.5rem;
     border-radius: 1rem;
-    width: 13rem;
+    width: 100%;
+    max-width: 13rem;
     box-shadow: 0px 0px 20px 0px rgba(24, 117, 232, 0.50);
     cursor: pointer;
 }
@@ -109,21 +116,22 @@ form button {
 
 .container section {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
     align-self: stretch;
 }
 
 .container section h2 {
     font-size: 2rem;
+    text-align: center;
 }
 
 .container section ul {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     gap: 1rem;
-
     font-size: 1.5rem;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -134,4 +142,52 @@ form button {
     font-style: italic;
     font-size: 2rem;
     padding-left: 1.5rem;
+}
+
+
+
+@media (max-width: 1024px) {
+    main.container h1 {
+        font-size: 4rem;
+    }
+
+    form {
+        gap: 1.5rem;
+    }
+
+    .container section {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    main.container {
+        padding: 3rem 1rem;
+    }
+
+    main.container h1 {
+        font-size: 3rem;
+    }
+
+    form button {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    main.container h1 {
+        font-size: 2.2rem;
+    }
+
+    form {
+        gap: 1rem;
+    }
+
+    .container section h2 {
+        font-size: 1.7rem;
+    }
+
+    .container section ul li {
+        font-size: 1.2rem;
+    }
 }
